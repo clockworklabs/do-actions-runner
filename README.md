@@ -8,7 +8,7 @@ This project is part of [DigitalOcean App Platform Hackathon](https://dev.to/dev
 
 ## Usage
 
-[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/ThewBear/do-actions-runner/tree/main&refcode=61b92fc0f519)
+[![Deploy to DO](https://mp-assets1.sfo2.digitaloceanspaces.com/deploy-to-do/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/clockworklabs/do-actions-runner/tree/main&refcode=61b92fc0f519)
 
 Currently, we **cannot** deploy a new app that only has the worker. So you need to create a new app with a service then delete that service and create a worker.
 
