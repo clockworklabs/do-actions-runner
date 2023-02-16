@@ -3,17 +3,13 @@ spec:
   services:
   - dockerfile_path: Dockerfile
     envs:
-    - key: TOKEN
+    - key: RUNNER_TOKEN
       scope: RUN_TIME
-      type: SECRET
-      value: GitHub personal access token
-    - key: OWNER
+      value:
+    - key: ORG
       scope: RUN_TIME
-      value: Repository Owner
-    - key: REPO
-      scope: RUN_TIME
-      value: Repository name
+      value:
     git:
       branch: main
-      repo_clone_url: https://github.com/ThewBear/do-actions-runner.git
+      repo_clone_url: https://github.com/clockworklabs/do-actions-runner.git
     name: do-actions-runner
