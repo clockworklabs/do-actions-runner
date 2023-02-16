@@ -1,8 +1,12 @@
 FROM ubuntu
 
 RUN useradd -m actions
+
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Etc/UTC
+
 RUN apt-get -y update
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
+RUN apt-get install -y \
     apt-transport-https ca-certificates curl jq software-properties-common \
     && toolset="$(curl -sL https://raw.githubusercontent.com/actions/virtual-environments/main/images/linux/toolsets/toolset-2004.json)" \
     && common_packages=$(echo $toolset | jq -r ".apt.common_packages[]") && cmd_packages=$(echo $toolset | jq -r ".apt.cmd_packages[]") \
