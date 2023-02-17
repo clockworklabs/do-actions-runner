@@ -27,6 +27,8 @@ while true; do
   echo -e "HTTP/1.1 200 OK\n\n $(date)" | nc -l -p 8080 -q 1  > /dev/null 2>&1
 done&
 
+echo "Setting up GH worker"
+
 ./config.sh \
   --url "https://github.com/${CONFIG_PATH}" \
   --token "${RUNNER_TOKEN}" \
@@ -35,6 +37,8 @@ done&
 
 trap 'cleanup' SIGTERM
 
-./run.sh "$@" &
+echo "Starting"
+
+./run.sh
 
 wait $!
