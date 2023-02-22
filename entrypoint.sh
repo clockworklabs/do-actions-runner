@@ -37,6 +37,7 @@ echo "Setting up GH worker"
   --url "https://github.com/${CONFIG_PATH}" \
   --token "${RUNNER_TOKEN}" \
   --name "${NAME:-$(hostname)}" \
+  --labels "${LABELS}:-self-hosted" \
   --unattended
 
 trap 'cleanup' SIGTERM
