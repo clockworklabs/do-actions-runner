@@ -7,12 +7,11 @@ ENV TZ=Etc/UTC
 # for tzdata
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
-RUN apt install pkg-config
-
 RUN mkdir /stdb
 RUN chmod 777 /stdb
 
 RUN apt-get -y update
+RUN apt install -y pkg-config
 RUN apt-get install -y \
     apt-transport-https ca-certificates curl jq software-properties-common \
     && toolset="$(curl -sL https://raw.githubusercontent.com/actions/virtual-environments/main/images/linux/toolsets/toolset-2004.json)" \
