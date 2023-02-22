@@ -7,6 +7,8 @@ ENV TZ=Etc/UTC
 # for tzdata
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
+RUN apt install pkg-config
+
 RUN mkdir /stdb
 RUN chmod 777 /stdb
 
@@ -27,7 +29,7 @@ RUN \
 
 RUN add-apt-repository ppa:git-core/ppa -y \
     && apt-get update -y && apt-get install -y --no-install-recommends \
-    build-essential git
+    build-essential git libssl-dev
 
 # Install LTS Node.js and related build tools
 RUN curl -sL https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash -s -- -ny - \
