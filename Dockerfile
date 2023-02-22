@@ -7,6 +7,9 @@ ENV TZ=Etc/UTC
 # for tzdata
 RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
 
+RUN mkdir /stdb
+RUN chmod 777 /stdb
+
 RUN apt-get -y update
 RUN apt-get install -y \
     apt-transport-https ca-certificates curl jq software-properties-common \
